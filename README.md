@@ -23,14 +23,19 @@ A classic Minesweeper game implemented in Java with a custom graphical interface
    ```
 2. **Compile the source code:**
    ```bash
-   javac -d bin src/sweeper/Launcher.java
+   find src -name '*.java' | xargs javac -d bin
    ```
-3. **Run the game:**
+3. **Copy resources to the classpath:**
+   ```bash
+   cp -r res/images bin/
+   cp -r res/fonts bin/
+   ```
+4. **Run the game:**
    ```bash
    java -cp bin sweeper.Launcher
    ```
 
-> Ensure the `res/` directory (with `fonts/` and `images/`) is in the project root, as the game loads assets from there.
+> Ensure the `images` and `fonts` folders are inside the `bin/` directory before running, as the game loads assets from there.
 
 ## Controls
 - **Left Click:** Reveal a tile
